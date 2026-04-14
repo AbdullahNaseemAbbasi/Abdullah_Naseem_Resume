@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Abdullah Naseem Abbasi — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy-900: #0b1220;
+    --navy-800: #111a2e;
+    --navy-700: #1a2540;
+    --blue-500: #3b82f6;
+    --blue-400: #60a5fa;
+    --blue-300: #93c5fd;
+    --purple-400: #a78bfa;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --border: #e2e8f0;
+    --white: #ffffff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 9pt;
+    line-height: 1.4;
+    color: var(--text-primary);
+    background: #e5e7eb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 72mm 1fr;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .sidebar {
+    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-900) 100%);
+    color: var(--white);
+    padding: 22px 20px;
+    position: relative;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.3), transparent 70%);
+    pointer-events: none;
+  }
+
+  .sidebar-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-wrap {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--blue-500), var(--purple-400));
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--navy-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32pt;
+    font-weight: 800;
+    color: var(--blue-300);
+    letter-spacing: -2px;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .sidebar h1 {
+    font-size: 14pt;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 3px;
+    letter-spacing: -0.3px;
+  }
+
+  .sidebar .role {
+    text-align: center;
+    font-size: 8.5pt;
+    color: var(--blue-300);
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .sidebar-heading {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--blue-400);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.2);
+  }
+
+  .contact-list {
+    list-style: none;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 7.5pt;
+    margin-bottom: 6px;
+    color: #cbd5e1;
+    word-break: break-word;
+    line-height: 1.35;
+  }
+
+  .contact-list .icon {
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7pt;
+    color: var(--blue-300);
+    margin-top: 1px;
+  }
+
+  .contact-list a {
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+
+  .skill-group {
+    margin-bottom: 10px;
+  }
+
+  .skill-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-group-title {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: var(--blue-300);
+    margin-bottom: 4px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .skill-tag {
+    font-size: 6.8pt;
+    padding: 2px 6px;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 8px;
+    color: #e0e7ff;
+    font-weight: 500;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: #cbd5e1;
+    margin-bottom: 5px;
+  }
+
+  .lang-item .level {
+    font-size: 6.8pt;
+    color: var(--blue-400);
+  }
+  .main {
+    padding: 22px 24px;
+    background: var(--white);
+  }
+
+  .section {
+    margin-bottom: 14px;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-heading {
+    font-size: 9.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--navy-900);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--navy-900);
+    position: relative;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--blue-500);
+  }
+
+  .summary {
+    font-size: 8.5pt;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    text-align: justify;
+  }
+
+  .item {
+    margin-bottom: 9px;
+    position: relative;
+  }
+
+  .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+    gap: 10px;
+  }
+
+  .item-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--navy-900);
+  }
+
+  .item-date {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .item-subtitle {
+    font-size: 8.5pt;
+    color: var(--blue-500);
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .item-subtitle .location {
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .item-bullets {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 3px;
+  }
+
+  .item-bullets li {
+    font-size: 8pt;
+    color: var(--text-secondary);
+    padding-left: 12px;
+    margin-bottom: 2px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .item-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--blue-500);
+    font-size: 8pt;
+    top: 0;
+  }
+
+  .project-tech {
+    font-size: 7pt;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
+
+  .project-links {
+    font-size: 7pt;
+    color: var(--blue-500);
+    margin-top: 3px;
+  }
+
+  .project-links a {
+    color: var(--blue-500);
+    text-decoration: none;
+    margin-right: 12px;
+  }
+
+  .edu-grade {
+    display: inline-block;
+    font-size: 8pt;
+    padding: 2px 8px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--navy-900);
+    font-weight: 600;
+    margin-left: 8px;
+  }
+
+  .edu-highlight {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(167, 139, 250, 0.05));
+    border-left: 3px solid var(--blue-500);
+    padding: 8px 12px 8px 12px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 9px;
+  }
+
+  .edu-highlight .item-title {
+    color: var(--navy-900);
+  }
+
+  .edu-highlight .edu-grade {
+    background: linear-gradient(135deg, var(--blue-500), var(--purple-400));
+    color: white;
+    border: none;
+    font-weight: 700;
+  }
+
+  .edu-highlight .item-bullets li strong {
+    color: var(--navy-900);
+    font-weight: 700;
+  }
+
+  .interests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .interest-chip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.04), rgba(167, 139, 250, 0.04));
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--blue-500);
+    border-radius: 0 5px 5px 0;
+  }
+
+  .chip-icon {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-500), var(--purple-400));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7.5pt;
+  }
+
+  .chip-title {
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--navy-900);
+    line-height: 1.2;
+  }
+
+  .chip-desc {
+    font-size: 6.8pt;
+    color: var(--text-muted);
+    margin-top: 1px;
+    line-height: 1.25;
+  }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      background: var(--white);
+    }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+
+  .print-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--blue-500), var(--purple-400));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 11pt;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    font-family: 'Inter', sans-serif;
+    z-index: 100;
+  }
+
+  .print-btn:hover {
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">⬇ Save as PDF</button>
+
+<div class="page">
+  <aside class="sidebar">
+    <div class="sidebar-content">
+
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <img src="myphoto.png" alt="Abdullah Naseem Abbasi" onerror="this.style.display='none';this.parentNode.innerHTML='AN';" />
+        </div>
+      </div>
+
+      <h1>Abdullah Naseem<br />Abbasi</h1>
+      <p class="role">Full Stack Developer</p>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Contact</div>
+        <ul class="contact-list">
+          <li>
+            <span class="icon">✉</span>
+            <a href="mailto:abdullahnaseem1386@gmail.com">abdullahnaseem1386@gmail.com</a>
+          </li>
+          <li>
+            <span class="icon">☎</span>
+            <span>+92 346 9066095</span>
+          </li>
+          <li>
+            <span class="icon">⌖</span>
+            <span>HBCHS, Naval Colony,<br />Karachi 75760, Pakistan</span>
+          </li>
+          <li>
+            <span class="icon">in</span>
+            <a href="https://linkedin.com/in/abdullah-naseem-abbasi-624a082b2">linkedin.com/in/abdullah-naseem-abbasi</a>
+          </li>
+          <li>
+            <span class="icon">⌨</span>
+            <a href="https://github.com/AbdullahNaseemAbbasi">github.com/AbdullahNaseemAbbasi</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">NestJS</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Ruby on Rails</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Database & Cloud</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Prisma</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">DevOps & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">Railway</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Languages</div>
+        <div class="lang-item">
+          <span>English</span>
+          <span class="level">Professional</span>
+        </div>
+        <div class="lang-item">
+          <span>Urdu</span>
+          <span class="level">Native</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Core Strengths</div>
+        <ul class="contact-list">
+          <li><span class="icon">◆</span><span>Problem Solving</span></li>
+          <li><span class="icon">◆</span><span>Clean Code Practices</span></li>
+          <li><span class="icon">◆</span><span>Scalable Architecture</span></li>
+          <li><span class="icon">◆</span><span>On-Time Delivery</span></li>
+          <li><span class="icon">◆</span><span>Continuous Learning</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </aside>
+  <main class="main">
+
+    <section class="section">
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary">
+        Passionate Full Stack Developer with 3+ years of hands-on experience leading real-world,
+        production-grade web applications from database to deployment. Skilled across the entire
+        pipeline — from pixel-perfect React and Next.js frontends to robust backend architectures
+        with Node.js, NestJS, and Spring Boot. Currently pursuing a BS in Software Engineering
+        while actively delivering live client projects.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">Work Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Full Stack Developer — Project Lead</div>
+          <div class="item-date">2022 – Present</div>
+        </div>
+        <div class="item-subtitle">
+          Zerovertical Labs
+          <span class="location">· Karachi, Pakistan</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Leading end-to-end development of real-world, production-grade web applications — owning architectural decisions, tech selection, and delivery timelines.</li>
+          <li>Spearheading full-stack work with React, Next.js, TypeScript on the frontend and Node.js, NestJS, Spring Boot on the backend.</li>
+          <li>Designing scalable database schemas with PostgreSQL, MongoDB, and Supabase — writing efficient queries and indexing strategies.</li>
+          <li>Integrating production-critical services: Stripe billing, Redis caching, Socket.io real-time messaging, and JWT/OAuth authentication.</li>
+          <li>Owning DevOps: containerizing with Docker, configuring CI/CD pipelines, and deploying to Vercel and Railway for zero-downtime releases.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">Featured Projects</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Nexora — AI-Powered Multi-Tenant SaaS Platform</div>
+        </div>
+        <div class="project-tech">Next.js 14 · NestJS · PostgreSQL · Prisma · Redis · Socket.io · Stripe</div>
+        <ul class="item-bullets">
+          <li>Architected a multi-tenant schema with org-level data isolation and role-based access control; integrated AI task generation.</li>
+          <li>Built real-time Kanban boards with Socket.io and integrated Stripe for subscription billing and webhook handling.</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://nexora-web-three.vercel.app">↗ Live Demo</a>
+          <a href="https://github.com/AbdullahNaseemAbbasi/nexora">⌨ Source Code</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">ShopNow — Full-Stack E-Commerce Platform</div>
+        </div>
+        <div class="project-tech">Next.js · Spring Boot · PostgreSQL · Tailwind CSS · JWT</div>
+        <ul class="item-bullets">
+          <li>Developed a Spring Boot REST API with JWT auth and role-based authorization, paired with a Next.js SSR frontend.</li>
+          <li>Designed a normalized PostgreSQL schema and built an admin dashboard for products, orders, and sales analytics.</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://shopnow-frontend-bay.vercel.app">↗ Live Demo</a>
+          <a href="https://github.com/AbdullahNaseemAbbasi/shopnow-frontend">⌨ Source Code</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">Education</h2>
+
+      <div class="item edu-highlight">
+        <div class="item-header">
+          <div class="item-title">
+            Bachelor of Science in Software Engineering
+            <span class="edu-grade">SGPA 3.1 / 4.0</span>
+          </div>
+          <div class="item-date">2022 – 2026 (Expected)</div>
+        </div>
+        <div class="item-subtitle">
+          Nazeer Hussain University
+          <span class="location">· Karachi, Pakistan · Currently 7th Semester</span>
+        </div>
+        <ul class="item-bullets">
+          <li><strong>Focus Areas:</strong> Full-Stack Web Development, Software Architecture, System Design, and Database Engineering.</li>
+          <li><strong>Core Coursework:</strong> Data Structures & Algorithms, DBMS, OOP, Software Engineering, Operating Systems, Computer Networks, Web Technologies.</li>
+          <li><strong>Engineering Mindset:</strong> Actively bridging academic theory with real-world production experience — applying SE principles to live client projects.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            HSC — Pre-Engineering
+            <span class="edu-grade">85%</span>
+          </div>
+          <div class="item-date">2023</div>
+        </div>
+        <div class="item-subtitle">
+          Adamjee Government Science College
+          <span class="location">· Karachi, Pakistan</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">
+            Matriculation — Science
+            <span class="edu-grade">96%</span>
+          </div>
+          <div class="item-date">2021</div>
+        </div>
+        <div class="item-subtitle">
+          E.A.B Pakistan Navy Secondary School
+          <span class="location">· Karachi, Pakistan</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">Areas of Interest</h2>
+      <div class="interests-grid">
+        <div class="interest-chip">
+          <span class="chip-icon">⚙</span>
+          <div>
+            <div class="chip-title">Software Architecture</div>
+            <div class="chip-desc">Designing scalable, maintainable systems</div>
+          </div>
+        </div>
+        <div class="interest-chip">
+          <span class="chip-icon">◆</span>
+          <div>
+            <div class="chip-title">AI & LLM Integration</div>
+            <div class="chip-desc">Embedding AI into production apps</div>
+          </div>
+        </div>
+        <div class="interest-chip">
+          <span class="chip-icon">◈</span>
+          <div>
+            <div class="chip-title">System Design</div>
+            <div class="chip-desc">High-availability distributed systems</div>
+          </div>
+        </div>
+        <div class="interest-chip">
+          <span class="chip-icon">▲</span>
+          <div>
+            <div class="chip-title">Open Source</div>
+            <div class="chip-desc">Contributing to the developer community</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
